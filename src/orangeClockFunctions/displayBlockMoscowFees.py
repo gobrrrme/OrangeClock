@@ -59,7 +59,7 @@ def setSecrets(SSID, PASSWORD):
 
 def getPrice(currency): # change USD to EUR for price in euro
     gc.collect()
-    data = urequests.get("https://mempool.space/api/v1/prices")
+    data = urequests.get("http://plmg5v6iunxinnbdkv4jll2rpomjhhunslhufjymk57pfiwzpwl7k7id.onion/api/v1/prices")
     price = data.json()[currency]
     data.close()
     return price
@@ -79,7 +79,7 @@ def getPriceDisplay(currency):
 
 def getLastBlock():
     gc.collect()
-    data = urequests.get("https://mempool.space/api/blocks/tip/height")
+    data = urequests.get("http://plmg5v6iunxinnbdkv4jll2rpomjhhunslhufjymk57pfiwzpwl7k7id.onion/api/blocks/tip/height")
     block = data.text
     data.close()
     return block
@@ -87,7 +87,7 @@ def getLastBlock():
 
 def getMempoolFees():
     gc.collect()
-    data = urequests.get("https://mempool.space/api/v1/fees/recommended")
+    data = urequests.get("http://plmg5v6iunxinnbdkv4jll2rpomjhhunslhufjymk57pfiwzpwl7k7id.onion/api/v1/fees/recommended")
     jsonData = data.json()
     data.close()
     return jsonData
